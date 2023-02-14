@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $(($(water#$WATER) + $(stir#$STIR))
+echo $($(bestchol#($(water#$WATER) + $(stir#$STIR)))
