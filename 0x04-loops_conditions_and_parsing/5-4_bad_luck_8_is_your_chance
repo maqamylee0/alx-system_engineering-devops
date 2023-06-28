@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+#use while and if  loop to diplay Best School 10 times
+count=0
+while [ "$count" != 10 ];do
+ if [ "$count" == 3 ]
+  then
+    echo "bad luck"	
+ elif [ "$count" == 7 ]
+  then
+    echo "good luck"
+ else
+    echo "Best School"
+ fi
+ ((count++))
+done

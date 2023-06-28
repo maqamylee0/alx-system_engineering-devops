@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#use until loop to diplay Best School 10 times
+count=0
+until [ "$count" == 10 ];do
+ echo "Best School"
+ ((count++))
+done
