@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#display parts of etc/passwd
+cat /etc/passwd | while IFS=: read -r username _ userid _ _ home _; do
+ echo "$username":"$userid":"$home"
+done
