@@ -1,4 +1,4 @@
-#/usr/bin/env bash
+#!/usr/bin/env bash
 #script to check file type
 file="school.txt"
 if [[ -e "$file" ]]; then
