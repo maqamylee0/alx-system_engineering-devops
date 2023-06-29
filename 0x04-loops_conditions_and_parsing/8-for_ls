@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#pritn only name after first dash
+directory_1=$(pwd)
+for f in "$directory_1"/*;do
+ if [ -f "$f" ]; then
+  filename=$(basename "$f")
+  new_f_name="${filename#*-}"
+  echo "$new_f_name"
+ fi
+done 
