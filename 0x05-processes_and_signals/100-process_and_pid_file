@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#processes and pid
+echo "$$" > /var/run/myscript.pid
+trap 'echo "I am invincible!!!"; exit 0' SIGTERM
+trap 'echo "Y U no love me?!"; exit 0' SIGINT
+trap 'rm -f /var/run/myscript.pid; exit 0' SIGQUIT SIGTERM
+while true; do
+ echo "To infinity and beyond"
+ sleep 1
+done
