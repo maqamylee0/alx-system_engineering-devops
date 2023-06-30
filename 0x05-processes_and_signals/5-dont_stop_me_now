@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #use kill to stop process
-piid=pgrep "4-to_infinity_and_beyond"
-kill "$piid"
+p_id=pgrep "4-to_infinity_and_beyond"
+kill "$p_id"
