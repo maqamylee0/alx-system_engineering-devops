@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#display pid and processes name without ps
+p=$(pgrep -f bash)
+for pid in $p; do
+ p_name=$(ps -p "$pid" -o comm=)
+ echo "$pid $p_name"
+done
