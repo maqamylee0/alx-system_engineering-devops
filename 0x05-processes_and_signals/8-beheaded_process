@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 #use kill to stop process
-piid=pgrep "7-highlander"
-kill "$piid"
+pkill -f "7-highlander"
