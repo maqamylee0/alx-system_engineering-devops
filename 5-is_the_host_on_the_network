@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#get string argument and ping it
+import sys
+argument = sys.argv[1]
+for i in $(seq 1 5)
+do
+  printf "Usage: %s %s\n" "5-is_the_host_on_the_network" "{argument}"
+done
