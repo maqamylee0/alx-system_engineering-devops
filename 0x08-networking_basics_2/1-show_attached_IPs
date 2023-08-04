@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#script to display all actives ips
+
+addresses=$(hostname -I | tr ' ' '\n')
+
+echo "$addresses"
