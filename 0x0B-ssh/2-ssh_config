@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-# connect without password
-
-Host 41.210.147.66
-	IdentityFile ~/.ssh/school
-	PasswordAuthentication no
