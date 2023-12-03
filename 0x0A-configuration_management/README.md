@@ -1,1 +1,0 @@
-Puppet manifests
