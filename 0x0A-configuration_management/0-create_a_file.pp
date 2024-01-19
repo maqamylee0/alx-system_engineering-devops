@@ -1,3 +1,5 @@
+# creates a file school in tmp
+
 $path_school = '/tmp/school'
 
 file { $path_school :
