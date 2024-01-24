@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+#redirect page
+
+sudo apt-get update
+sudo apt-get -y install nginx
+echo "Hello world" | sudo tee /var/www/html/index.html
+echo "Redirecting..." | sudo tee /var/www/html/redirect.html
+sudo sh -c 'echo "server {
+listen 80;
+server_name localhost;
+location /redirect_me {
+	return 301 /redirect.html;
+}
+location / {
+	root /var/www/html;
+	index index.html;
+}
+}"> /etc/nginx/sites-available/default'
+sudo /etc/init.d/nginx restart

@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+#not found page
+
+sudo apt-get update
+sudo apt-get -y install nginx
+echo "Hello world" | sudo tee /var/www/html/index.html
+echo "Redirecting..." | sudo tee /var/www/html/redirect.html
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/not_found.html
+sudo sh -c 'echo "server {
+listen 80;
+server_name localhost;
+location /redirect_me {
+	return 301 /redirect.html;
+}
+location / {
+	root /var/www/html;
+	index index.html;
+}
+error_page 404 /not_found.html;
+location = /not_found {
+	root /var/www/html;
+	internal;
+}
+
+}"> /etc/nginx/sites-available/default'
+sudo /etc/init.d/nginx restart
