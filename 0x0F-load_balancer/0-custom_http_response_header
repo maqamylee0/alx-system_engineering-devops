@@ -1,4 +1,4 @@
-!#/usr/bin/env bash
+#!/usr/bin/env bash
 #creating another serve =r with custom header
 
 sudo apt-get update

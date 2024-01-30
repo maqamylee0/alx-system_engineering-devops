@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+#configure load balncer to distribute traffic between server 1 and 2
+
+#install haproxy
+sudo apt-get -y update
+sudo apt-get -y install haproxy
+
+sudo sh -c "echo '
+	frontend emmilly-frontend
+		bind *:80
+		mode http
+		default_backend emmilly-backend
+
+	backend emmilly-backend
+		mode http
+		balance roundrobin
+		server 235193-web-01 75.101.239.243:80 check
+	        server 235193-web-02 100.26.210.155:80 check
+	'> /etc/haproxy/haproxy.cfg"
+sudo systemctl enable haproxy
+sudo systemctl restart haproxy
