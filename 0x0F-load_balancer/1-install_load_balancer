@@ -14,8 +14,8 @@ sudo sh -c "echo '
 	backend emmilly-backend
 		mode http
 		balance roundrobin
-		server 235193-web-01 75.101.239.243:80 check
-	        server 235193-web-02 100.26.210.155:80 check
+		server 235193-web-01 100.26.178.191:80 check
+	        server 235193-web-02 54.146.58.176:80 check
 	'> /etc/haproxy/haproxy.cfg"
 sudo systemctl enable haproxy
 sudo systemctl restart haproxy

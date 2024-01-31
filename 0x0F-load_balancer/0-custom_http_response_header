@@ -6,8 +6,8 @@ sudo apt-get -y install nginx
 echo "Hello world" | sudo tee /var/www/html/index.html
 echo "Redirecting..." | sudo tee /var/www/html/redirect.html
 echo "Ceci n'est pas une page" | sudo tee /var/www/html/not_found.html
-sudo sh -c 'echo "server {
-listen 80;
+sudo echo "server {
+listen 80 default_server;
 server_name localhost;
 location /redirect_me {
         return 301 /redirect.html;
@@ -23,5 +23,6 @@ location = /not_found {
         internal;
 }
 
-}"> /etc/nginx/sites-available/default'
-sudo /etc/init.d/nginx restart
+}"> default
+sudo mv -f default /etc/nginx/sites-available/default
+sudo service nginx restart
