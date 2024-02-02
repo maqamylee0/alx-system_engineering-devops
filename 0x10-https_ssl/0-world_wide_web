@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# configure subdomains
+
+call_dig() {
+    answer=$(dig "$1" | grep -A1 'ANSWER SECTION' | tail -n 1)
+	sub_domain=$(echo "$answer" | awk -F'.' '{print $1}')
+	record=$(echo "$answer" | awk '{print $4}')
+	destination_ip=$(echo "$answer" | awk '{print $5}')
+	echo "The subdomain $sub_domain is a $record record and points to $destination_ip"
+}
+
+if [ $# -gt 1 ]; then
+	call_dig "$2.$1"
+elif [ $# -lt 2 ]; then
+    call_dig "www.$1"
+	call_dig "lb-01.$1"
+	call_dig "web-01.$1"
+	call_dig "web-02.$1"
+fi
