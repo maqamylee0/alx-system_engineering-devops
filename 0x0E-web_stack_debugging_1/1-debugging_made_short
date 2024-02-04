@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Install nginx web server
+sudo rm -f /etc/nginx/sites-enabled/default
+sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+pkill -1 nginx
