@@ -4,4 +4,6 @@
 nginx_conf="/etc/nginx/nginx.conf"
 sed -i 's/^user.*/user nginx;/g' "$nginx_conf"
 sed -i 's/^listen.*80;/listen 8080;/g' "$nginx_conf"
+chmod 644 /etc/nginx/nginx.conf
+pkill 644 apache
 sudo -u nginx service nginx start
