@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# run nginx as nginx user not root user
+
+nginx_conf="/etc/nginx/nginx.conf"
+sed -i 's/^user.*/user nginx;/g' "$nginx_conf"
+sed -i 's/^listen.*80;/listen 8080;/g' "$nginx_conf"
+sudo -u nginx service nginx start
