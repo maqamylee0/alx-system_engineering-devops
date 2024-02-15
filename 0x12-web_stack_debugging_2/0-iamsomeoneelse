@@ -2,7 +2,7 @@
 # script to accept an argument and run whoami on it
 
 arg1=$1
-if [ $# -ne 1]; then
+if [ $# -ne 1 ]; then
 	echo "Use: $0 <something>"
 	exit 1
 fi
