@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# script to accept an argument and run whoami on it
+
+arg1=$1
+if [ $# -ne 1]; then
+	echo "Use: $0 <something>"
+	exit 1
+fi
+sudo -u "$arg1" whoami
