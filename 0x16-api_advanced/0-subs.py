@@ -4,7 +4,10 @@
 import requests
 from os import sys
 
+
 subredit = sys.argv[1]
+
+
 def number_of_subscribers(subreddit):
     """Get number of subscribers for a given subreddit"""
     if subreddit is None:

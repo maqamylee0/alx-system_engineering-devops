@@ -5,6 +5,8 @@ import requests
 from os import sys
 
 subredit = sys.argv[1]
+
+
 def recurse(subreddit, hot_list=[], after=None):
     """Get top allhot posts titles for a given subreddit recursively"""
     if subreddit is None:
@@ -17,7 +19,8 @@ def recurse(subreddit, hot_list=[], after=None):
     if response.status_code != 200:
         return None
     data = response.json().get('data')
-    hot_list.extend([post.get('data').get('title') for post in data.get('children')])
+    hot_list.extend([post.get('data').get('title')
+                     for post in data.get('children')])
     after = data.get('after')
     if after is not None:
         return recurse(subreddit, hot_list, after)

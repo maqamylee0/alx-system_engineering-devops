@@ -5,6 +5,8 @@ import requests
 from os import sys
 
 subredit = sys.argv[1]
+
+
 def top_ten(subreddit):
     """Get top 10 hot posts titles for a given subreddit"""
     if subreddit is None:
