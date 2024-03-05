@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Query reddit api subscribers for a subredit"""
+"""
+    Query reddit api subscribers for a subredit
+"""
 
 import requests
 from os import sys
@@ -9,7 +11,9 @@ subredit = sys.argv[1]
 
 
 def number_of_subscribers(subreddit):
-    """Get number of subscribers for a given subreddit"""
+    """
+        Get number of subscribers for a given subreddit
+    """
     if subreddit is None or not isinstance(subreddit, str):
         return 0
     url = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)

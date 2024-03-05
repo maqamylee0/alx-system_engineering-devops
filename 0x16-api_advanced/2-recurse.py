@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Query reddit api top ten- posts titles for a subredit recursively"""
+"""
+    Query reddit api top  posts titles for a subredit recursively
+"""
 
 import requests
 from os import sys
@@ -8,7 +10,9 @@ subredit = sys.argv[1]
 
 
 def recurse(subreddit, hot_list=[], after=None):
-    """Get top allhot posts titles for a given subreddit recursively"""
+    """
+        Get top allhot posts titles for a given subreddit recursively
+    """
     if subreddit is None or not isinstance(subreddit, str):
         return None
     url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
