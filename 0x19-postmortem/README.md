@@ -21,15 +21,13 @@ The incident was escalated to the operations and development teams responsible f
 - Resolution: 
 The issue was resolved by correcting the misconfiguration in the Apache PHP settings file (`/var/www/html/wp-settings.php`).
 
-Root Cause and Resolution:
+# Root Cause and Resolution:
 
 Root Cause:
 The root cause of the issue was an incorrect string in the PHP configuration file (`wp-settings.php`). Specifically, the string "phpp" was present instead of "php", causing Apache to encounter syntax errors and return HTTP 500 errors when processing PHP scripts.
 
 Resolution: 
 The issue was fixed by editing the PHP configuration file (`wp-settings.php`) and replacing the incorrect string "phpp" with the correct string "php". This corrected the syntax error and restored proper functioning of the Apache server.
-
-# Corrective and Preventative Measures:
 
 # Improvements/Fixes:  
 - Strengthen monitoring systems to detect configuration errors and HTTP error rates.
